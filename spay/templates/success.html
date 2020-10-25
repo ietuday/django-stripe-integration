@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block content %}
+	<div id="succ_box">
+		<img id="succes-icon" src="{% static 'images/success.png' %}">
+		<h4>Thank you for your contribution of {{amount}}/-</h4>
+		<p>Your support helps me fulfill our dream of helping needy around the world </p>
+
+
+    <a href="{% url 'home' %}" class="sbtn btn btn-info" role="button"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to donation page</a>
+
+
+	</div>
+
+{% endblock content %}

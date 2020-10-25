@@ -1,0 +1,74 @@
+{% extends "home.html" %}
+{% load static %}
+{% block content %}
+
+
+<script src="https://js.stripe.com/v3/"></script>
+
+
+<section class='home-banner  relative'>
+  <div class="container-fluid">
+    <div class="row  d-flex align-items-center justify-content-center">
+      <div class="header-left col-lg-5 col-md-5">
+        <div class="header-left-content">
+        <h1>YOUR GREATNESS IS NOT WHAT YOU HAVE,IT'S WHAT YOU GIVE...</h1>
+        </div>
+      </div>
+      <div class="header-right col-lg-7 col-md-6 col-sm-8">
+        <div class="left-img">
+          <img class="l_img" src="{% static 'images/spay_img.jpg' %}" alt="">
+        </div>
+        <div class="form-wrapper">
+
+        <form action="{% url 'charge' %}" method="post" id="payment-form">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" name="name" value="" class="form-control" placeholder="Name">
+            </div>
+            <div class="col-md-6">
+              <input type="text" name="email" value="" class="form-control" placeholder="Email">
+            </div>
+          </div>
+          <br>
+          <div class="">
+            <input type="text" name="amount" value="" class="form-control" placeholder="Enter Currency">
+          </div>
+
+          <br>
+
+          <div class="">
+
+                <label for="card-element">
+                  Credit or debit card
+                </label>
+                <div id="card-element">
+                  <!-- A Stripe Element will be inserted here. -->
+                </div>
+
+                <!-- Used to display form errors. -->
+                <div id="card-errors" role="alert"></div>
+              </div>
+              <hr>
+            <button id='pay-btn'>Submit Payment</button>
+
+
+        </form>
+
+        </div>
+
+
+
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+{% endblock content %}

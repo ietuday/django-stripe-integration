@@ -1,0 +1,9 @@
+*.log
+*.pyc
+.idea/
+env/
+venv/
+**/migrations/00*
+*.log
+*.pyc
+.idea/
